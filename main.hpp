@@ -1,19 +1,34 @@
-
+#include "main.cpp"
 #include <iostream> 
-#include <vector> 
 
-void getTwoValues(int &begin, int &end); 
-void getNextPrime(int begin); 
-void getPrevPrime(int end); 
+void getTwoValues(int &begin, int &end) {
+    do {
+        cout << "Enter two integer values (begin < end): "; 
+        cin >> begin >> end; 
+        if (begin >= end) {
+            cout << "Invalid input! Please make sure begin < end. " << endl; 
+        }
+    } while (begin >= end); 
+}
 
-bool isPrime(int n) {
-    if (n <= 1)
-        return false; 
-    for (int i = 2; i * i <= n; i++) {
-        if (n % i == 0)
-            return false; 
+int getNextPrime(int begin) {
+    begin ++
+    while (true) {
+        if (isPrime(begin)) {
+            return begin; 
+        }
+        begin ++
     }
-    return true; 
+}
+
+int getPrevPrime(int end) {
+    end--; 
+    while (true) {
+        if (isPrime(end)) {
+            return end; 
+        }
+        end--; 
+    }
 }
 
 
